@@ -1,0 +1,23 @@
+<div>Player Movement Example</div>
+<div id="playerMovement" class="canvas-left"></div>
+<pre class="fragment" data-fragment-index="2">
+<code data-trim>
+var speed = 5;
+
+keyboardJS.bind('a', function(e) {
+    mesh.translateX(-speed);
+    console.log(mesh.position);
+}, function(e) {
+    console.log('a is released');
+});
+
+keyboardJS.bind('a + w', function(e) {
+    mesh.translateX(-speed);
+    mesh.translateZ(-speed);
+    console.log(mesh.position);
+}, function(e) {
+    console.log('a + w is released');
+});
+
+</code>
+</pre>

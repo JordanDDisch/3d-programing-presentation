@@ -1,0 +1,17 @@
+<div id="second-slide" class="canvas-left"></div>
+<button id="light-button" value="off">LightSwitch</button>
+<pre>
+<code data-trim>
+//change this to:
+material = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
+
+//this
+material = new THREE.MeshLambertMaterial( { color: 0xff0000, wireframe: true } );
+
+//add light
+function addLight() {
+    light = new THREE.DirectionalLight(0xFFFF00);
+    light.position.set(10, 0, 10);
+    scene.add(light);
+}
+</code></pre>

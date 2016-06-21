@@ -1,0 +1,15 @@
+<div>Rotating Direction Light</div>
+<div id="rotatingLight" class="canvas-left"></div>
+<pre>
+<code data-trim>
+function animate() {
+
+    requestAnimationFrame(animate);
+
+    light.rotation.x += 0.01;
+    light.rotation.y += 0.02;
+
+    renderer.render(scene, camera);
+}
+</code></pre>
+<div id="lightRotation"></div>

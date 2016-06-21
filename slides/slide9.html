@@ -1,0 +1,40 @@
+<div>Skybox Example</div>
+<div id="skyBox" class="fragment canvas-left" data-fragment-index="1"></div>
+<pre class="fragment" data-fragment-index="2">
+<code data-trim>
+    var urls = [
+    'lib/img/skybox/px.jpg',
+    'lib/img/skybox/nx.jpg',
+    'lib/img/skybox/py.jpg',
+    'lib/img/skybox/ny.jpg',
+    'lib/img/skybox/pz.jpg',
+    'lib/img/skybox/nz.jpg'
+    ];
+
+    var cubemap = THREE.ImageUtils.loadTextureCube(urls); // load textures
+    cubemap.format = THREE.RGBFormat;
+
+    var shader = THREE.ShaderLib['cube']; // init cube shader from built-in lib
+    shader.uniforms['tCube'].value = cubemap; // apply textures to shader
+
+    // create shader material
+    var skyBoxMaterial = new THREE.ShaderMaterial( {
+    fragmentShader: shader.fragmentShader,
+    vertexShader: shader.vertexShader,
+    uniforms: shader.uniforms,
+    depthWrite: false,
+    side: THREE.BackSide
+    });
+
+    // create skybox mesh
+    var skybox = new THREE.Mesh(
+    new THREE.BoxGeometry(300, 300, 300),
+    skyBoxMaterial
+    );
+
+    skyBoxMaterial.needsUpdate = true;
+
+    scene.add(skybox);
+
+</code>
+</pre>

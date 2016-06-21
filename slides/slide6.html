@@ -1,0 +1,15 @@
+<div class="lightMvContainer">
+<div>Moving Light Position</div>
+<div id="lightMovement" class="canvas-left"></div>
+<span>LightMovement<input id="lightMvSlide" type="range" name="points" min="-10" max="10"></span>
+
+<pre>
+<code data-trim>
+var lightButton = document.getElementById("lightMvSlide");
+    lightButton.addEventListener("change", function() {
+    light.position.set(lightButton.value, 0, 10);
+    console.log(lightButton.value);
+});
+</code></pre>
+
+</div>
